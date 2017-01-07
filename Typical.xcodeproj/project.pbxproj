@@ -31,6 +31,8 @@
 		49D2F93B1E21271300242D3B /* TypicalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypicalTests.swift; sourceTree = "<group>"; };
 		49D2F93D1E21271300242D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49D2F9471E2128FC00242D3B /* Typical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typical.swift; sourceTree = "<group>"; };
+		49D2F9491E2131FB00242D3B /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		49D2F94A1E2131FB00242D3B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,8 @@
 				49D2F92F1E21271300242D3B /* Typical */,
 				49D2F93A1E21271300242D3B /* TypicalTests */,
 				49D2F92E1E21271300242D3B /* Products */,
+				49D2F9491E2131FB00242D3B /* LICENSE */,
+				49D2F94A1E2131FB00242D3B /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
