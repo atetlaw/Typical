@@ -47,7 +47,7 @@ let isGreaterThan5 = TypicalInt { $0 > 5 }
 let isLessThan15 = TypicalInt { $0 < 15 }
 ```
 
-Since the struct implements typical we can join them all together to make 1 struct that matches different combinations. Here was want to match the int if it's greater than `5`, less than `15`, but not equal to `8`:
+Since the struct implements `Typical` we can join them all together to make 1 struct that matches different combinations. Here was want to match the int if it's greater than `5`, less than `15`, but not equal to `8`:
 
 ```swift
 let selectTheRightInt = isGreaterThan5 && isLessThan15 && !isEqualTo8
