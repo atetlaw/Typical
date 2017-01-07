@@ -79,7 +79,9 @@ public final class Matching<T>: Typical {
 
 So instead of my custom struct I could have just used: 
 
-`typealias TypicalInt = Matching<Int>`.
+```swift
+typealias TypicalInt = Matching<Int>
+```
 
 Typical includes the `&&`, `||`, and `!` operators, as well as a `withAll` and `withAny` property on collections of Typical instances. There are also static methods `withAll` and `withAny` that take a variable list of `Typical` instances, as well as a `pick` method for ternary operator-style logic. 
 
