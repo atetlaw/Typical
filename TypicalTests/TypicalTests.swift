@@ -11,6 +11,17 @@ import XCTest
 
 typealias TypicalURL = Matching<URLComponents>
 
+struct TypicalInt: Typical {
+    typealias Subject = Int
+    private var predicate: (Int) -> Bool
+    init(_ test: @escaping (Int) -> Bool) {
+        predicate = test
+    }
+    func test(_ s: Int) -> Bool {
+        return predicate(s)
+    }
+}
+
 class TypicalTests: XCTestCase {
 
     lazy var subject: URLComponents = {
@@ -45,17 +56,32 @@ class TypicalTests: XCTestCase {
     }
 
     func testArrayOperations() {
-        typealias TypicalInt = Matching<Int>
+        typealias MatchingInt = Matching<Int>
+
         let ints = [1,2,3,4,5,6,7,8,9,0]
         let expected = [4,5,6,7]
-        let is3 = TypicalInt { $0 == 3 }
-        let isgt3 = TypicalInt { $0 > 3 }
-        let islt8 = TypicalInt { $0 < 8 }
+        let is3 = MatchingInt { $0 == 3 }
+        let isgt3 = MatchingInt { $0 > 3 }
+        let islt8 = MatchingInt { $0 < 8 }
 
         let select = isgt3 && islt8 && !is3
 
         XCTAssertEqual(ints.filter(select.test), expected)
         XCTAssertEqual(ints.first(where: select.test), 4)
+    }
+
+    func testArrayOperationsWithCustomStruct() {
+
+        let ints = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+        let expected = [6,7,9,10,11,12,13,14]
+        let isEqualTo8 = TypicalInt { $0 == 8 }
+        let isGreaterThan5 = TypicalInt { $0 > 5 }
+        let isLessThan15 = TypicalInt { $0 < 15 }
+
+        let select = isGreaterThan5 && isLessThan15 && !isEqualTo8
+
+        XCTAssertEqual(ints.filter(select.test), expected)
+        XCTAssertEqual(ints.first(where: select.test), 6)
     }
 
     func testComplexCombinedMatching() {
@@ -81,7 +107,6 @@ class TypicalTests: XCTestCase {
         XCTAssertTrue(anyHTTP.test(subject))
         XCTAssertFalse(!example.test(subject))
         XCTAssertTrue(allofit.test(subject))
-
     }
 
     func testPickFunction() {
