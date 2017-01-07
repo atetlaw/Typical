@@ -10,6 +10,7 @@
 		49D2F9371E21271300242D3B /* Typical.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D2F92D1E21271300242D3B /* Typical.framework */; };
 		49D2F93C1E21271300242D3B /* TypicalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2F93B1E21271300242D3B /* TypicalTests.swift */; };
 		49D2F93E1E21271300242D3B /* Typical.h in Headers */ = {isa = PBXBuildFile; fileRef = 49D2F9301E21271300242D3B /* Typical.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49D2F9481E2128FC00242D3B /* Typical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2F9471E2128FC00242D3B /* Typical.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		49D2F9361E21271300242D3B /* TypicalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TypicalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D2F93B1E21271300242D3B /* TypicalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypicalTests.swift; sourceTree = "<group>"; };
 		49D2F93D1E21271300242D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49D2F9471E2128FC00242D3B /* Typical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typical.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				49D2F9301E21271300242D3B /* Typical.h */,
 				49D2F9311E21271300242D3B /* Info.plist */,
+				49D2F9471E2128FC00242D3B /* Typical.swift */,
 			);
 			path = Typical;
 			sourceTree = "<group>";
@@ -147,7 +150,7 @@
 				TargetAttributes = {
 					49D2F92C1E21271300242D3B = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = WHYAM6NMLR;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					49D2F9351E21271300242D3B = {
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49D2F9481E2128FC00242D3B /* Typical.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,18 +325,21 @@
 		49D2F9421E21271300242D3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WHYAM6NMLR;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Typical/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dexagogo.Typical;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -340,14 +347,16 @@
 		49D2F9431E21271300242D3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WHYAM6NMLR;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Typical/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dexagogo.Typical;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -359,6 +368,7 @@
 		49D2F9451E21271300242D3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = WHYAM6NMLR;
 				INFOPLIST_FILE = TypicalTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -371,6 +381,7 @@
 		49D2F9461E21271300242D3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = WHYAM6NMLR;
 				INFOPLIST_FILE = TypicalTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
