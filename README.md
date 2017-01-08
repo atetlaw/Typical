@@ -4,7 +4,7 @@ Typical is a Swift micro-framework for wrapping the closure `(Subject) -> Bool` 
 
 ## Introduction
 
-A closure with the form `(Subject) -> Bool` is very useful for matching purposes, where `Subject` is any type. Typical is a protocol that adds operators and `Collection` methods so you can join multiple closures together, with custom matching logic, and create a single instance that is also in the form of `(Subject) -> Bool`.
+A closure with the form `(Subject) -> Bool` is very useful for matching purposes, where `Subject` is the type you want to test. Typical is a protocol that adds operators and `Collection` methods so you can join multiple closures together, with custom matching logic, and create a single instance that is also in the form of `(Subject) -> Bool`.
 
 ```swift
 public protocol Typical {
@@ -24,7 +24,7 @@ If you want to match instances of `Int` with several test conditions that you ca
 { $0 < 15 }
 ```
 
-Create a type that can store the closure in a variable and implement `Typical`:
+First create a type that can store the closure in a variable and implement `Typical`:
 
 ```swift
 struct TypicalInt: Typical {
@@ -39,7 +39,7 @@ struct TypicalInt: Typical {
 }
 ```
 
-Now you can create 3 instances of the struct:
+Now you can create 3 instances of your struct:
 
 ```swift
 let isEqualTo8 = TypicalInt { $0 == 8 }
@@ -47,7 +47,7 @@ let isGreaterThan5 = TypicalInt { $0 > 5 }
 let isLessThan15 = TypicalInt { $0 < 15 }
 ```
 
-Since the struct implements `Typical` we can join them all together to make 1 struct that matches different combinations. Here was want to match the int if it's greater than `5`, less than `15`, but not equal to `8`:
+Since the struct implements `Typical` we can join them all together to make 1 struct that combines the logic of all the matches. Here we match the int if it's greater than `5`, less than `15`, but not equal to `8`:
 
 ```swift
 let selectTheRightInt = isGreaterThan5 && isLessThan15 && !isEqualTo8
@@ -87,7 +87,7 @@ Typical includes the `&&`, `||`, and `!` operators, as well as a `withAll` and `
 
 ## Why?
 
-It came about because I wanted to have reusable matching logic in unit tests. I was testing instances of `URLRequest` and created a bunch of operators to test the hostname, scheme, path, querystring etc. I've inlcuded som eexamples in the unit tests.
+It came about because I wanted to have reusable matching logic in unit tests. I was testing instances of `URLRequest` and created a bunch of operators to test the hostname, scheme, path, querystring etc. I've inlcuded some examples in the unit tests.
 
 It was also bit of fun, since I was trying to learn Swift generics. I also think Swift micro-frameworks are pretty cool, and I wanted to write one! In reality it's a silly little protocol with limited functionaloty, but who knows, someone else might find it useful too.
 
