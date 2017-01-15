@@ -89,5 +89,5 @@ Typical includes the `&&`, `||`, and `!` operators, as well as a `withAll` and `
 
 It came about because I wanted to have reusable matching logic in unit tests. I was testing instances of `URLRequest` and created a bunch of operators to test the hostname, scheme, path, querystring etc. I've inlcuded some examples in the unit tests.
 
-It was also bit of fun, since I was trying to learn Swift generics. I also think Swift micro-frameworks are pretty cool, and I wanted to write one! In reality it's a silly little protocol with limited functionaloty, but who knows, someone else might find it useful too.
+It was also bit of fun, since I was trying to learn Swift generics. I also think Swift micro-frameworks are pretty cool, and I wanted to write one! In reality it's a silly little protocol with limited functionalty, but who knows, someone else might find it useful too.
 
