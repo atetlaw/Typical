@@ -55,6 +55,16 @@ class TypicalTests: XCTestCase {
         XCTAssertTrue(anyChecks.test(subject))
     }
 
+    func testCombinedMatchingAllOrAnyWithCustomOperators() {
+        let check1 = TypicalURL { $0.host == "example.com" }
+        let check2 = TypicalURL { $0.scheme == "https" }
+        let check3 = TypicalURL { $0.path == "go/here" }
+        let allChecks = check1 && check2 && check3
+        let anyChecks = check1 || check2 || check3
+        XCTAssertFalse(allChecks.test(subject))
+        XCTAssertTrue(anyChecks.test(subject))
+    }
+
     func testArrayOperations() {
         typealias MatchingInt = Matching<Int>
 
